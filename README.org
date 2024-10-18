@@ -1,0 +1,6 @@
+#+title: Elisp Study
+#+author: carlosguinto
+
+This repo is dedicated to me learning Elisp for Emacs. The reason for me learning Elisp is to be more proficient with using my editor.
+
+The goal: TO BE BLAZINGLY FAST!

@@ -1,0 +1,66 @@
+#+title: List Processing
+
+* Lisp Lists
+
+#+begin_src elisp
+  '(rose violet daisy buttercup)
+  (+ 2 2)
+  '(this list has (a list inside of it))
+#+end_src
+
+** Lisp Atoms
+
+- Lisp atoms are "symbols", and "numbers" enclosed in parentheses.
+- All quoted texts including the punctuation mark and the blank spaces is a single atom.
+
+* Running a Program
+
+A list in Lisp is a program ready to run. In Emacs we can use the command ~eval-last-sexp~, meaning we evaluate the last s(/symbolic/)-expression. We can also use the shortcut of ~C-x C-e~.
+
+* The Lisp Interpreter
+
+When we evaluate a list, the interpreter does the following:
+
+1. Looks if there is a *quote* before the list.
+   - If there is then the interpreter gives us the list itself.
+2. If there is no quote before the listp, the interpreter looks at the first element of the list.
+3. If the first element has a function definition, the interpreter carries out the instructions.
+4. Else, it gives us an error message.
+5. The interpreter works from left to right, from one expression to the next.
+
+** Byte Compiling
+
+Can transform human readable code into byte compiled code by running a compile command such as ~byte-compile-file~.
+
+Byte compiled code ends in ~.elc~ rather than the file extension of elisp files of ~.el~.
+
+* Evaluation
+
+Evaluating a symbolic expression commonly causes:
+- The Lisp interpreter returning a value
+- Carry out a side effect
+- Produce an error
+
+* Arguments
+
+** The ~message~ Function
+
+The message function takes a variable number of arguments and is used to send messages to the user.
+
+Commonly the output is seen in the echo area.
+
+Like C, we can add format specifiers using the ~message function~.
+
+#+begin_src elisp
+  (message "There is a fill column at column number %d." fill-column)
+#+end_src
+
+* Setting the Value of a Variable
+- ~let~
+- ~setq~
+
+#+begin_src elisp
+  ;; In this example, we set the variable of flowers to the list (rose violet daisy buttercup)
+
+  (setq flowers '(rose violet daisy buttercup))
+#+end_src
